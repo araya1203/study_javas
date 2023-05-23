@@ -4,6 +4,10 @@ public class MakingGamebyOneHand {
         String B = "";
         String C = "2";
 
+        System.out.println(A);
+        System.out.println(B);
+        System.out.println(C);
+
         B = C;
         C = A;
         A = B;
@@ -12,6 +16,8 @@ public class MakingGamebyOneHand {
         System.out.println(B);
         System.out.println(C);
        
+      // return 0;
+        
     }    
     
 }
