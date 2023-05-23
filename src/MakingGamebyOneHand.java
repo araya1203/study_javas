@@ -1,20 +1,16 @@
 public class MakingGamebyOneHand {
     public static void main(String[] args)  {
-        int variable1 = 1;
-        int variable2 = 2;
-        int temp;
+        String A = "1" ;
+        String B = "";
+        String C = "2";
 
-        System.out.println("A" + variable1);
-        System.out.println("B" + variable2);
+        B = C;
+        C = A;
+        A = B;
 
-      
-        temp = variable1;
-        variable1 = variable2;
-        variable2 = temp;
-
-        System.out.println("temp");
-        System.out.println("A " + variable1);
-        System.out.println("B" + variable2);
+        System.out.println(A);
+        System.out.println(B);
+        System.out.println(C);
        
     }    
     
