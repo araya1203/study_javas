@@ -4,17 +4,17 @@ public class MakingGamebyOneHand {
         int variable2 = 2;
         int temp;
 
-        System.out.println("변수 1: " + variable1);
-        System.out.println("변수 2: " + variable2);
+        System.out.println("A" + variable1);
+        System.out.println("B" + variable2);
 
-        // 변수 교차로 값 입력
+      
         temp = variable1;
         variable1 = variable2;
         variable2 = temp;
 
-        System.out.println("값 교차 후");
-        System.out.println("변수 1: " + variable1);
-        System.out.println("변수 2: " + variable2);
+        System.out.println("temp");
+        System.out.println("A " + variable1);
+        System.out.println("B" + variable2);
        
     }    
     
