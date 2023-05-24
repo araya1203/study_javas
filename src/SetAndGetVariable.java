@@ -5,8 +5,7 @@ public class SetAndGetVariable {
         int C = 5;
         int D = 7;
 
-    
-        
+      
         if (B == 3) {
             A = 10;
         }
