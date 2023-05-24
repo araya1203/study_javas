@@ -5,13 +5,11 @@ public class LoopWithCounter {
           int A = 5;
           int B = 1;
           int C = 1;
-          while ( C < A && B < A) {
-            System.out.println(B);
+          while ( C <= A ) {
             System.out.println(C);
              B = B + 1 ;
              C = C + 1 ;
           }
-            System.out.println(B);
             System.out.println(C);  
         // reurn 0;
     }
