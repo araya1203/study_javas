@@ -4,11 +4,9 @@ public class LoopWithMark {
             // code block to be executed
         //   }
          
-        int B = 5;
-          for (int A = 1;  A < B; A = A + 1) {
+          for (int A = 1;  A < 5; A = A + 1) {
             // code block to be executed
             System.out.println( "for"+""+A);
-     
         //   }
           
         }
