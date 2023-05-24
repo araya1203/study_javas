@@ -10,7 +10,7 @@ public class LoopWithCounter {
              B = B + 1 ;
              C = C + 1 ;
           }
-            System.out.println(C);  
+            System.out.println();  
         // reurn 0;
     }
     
