@@ -18,7 +18,7 @@ public class WhileWithScanners {
                 // java에서는 문자로는 == 사용할 수 없음. equals 사용해야함.
                  System.out.println("대출 업무입니다.");
                   } else if (answer.equals ("2")) {
-1                 System.out.println("예금 업무입니다.");
+                 System.out.println("예금 업무입니다.");
                   } else{
                  System.out.println("업무가 종료됩니다.");
                   break;
