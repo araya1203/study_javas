@@ -45,7 +45,7 @@ public class CasherFor {
 
             System.out.println();
             System.out.println("담은 총합: " + sum + "원");
-
+            System.out.println("--- 계산 종료 ---");
             scanner.close();
 
         } catch (Exception e) {
