@@ -15,8 +15,7 @@ public class CasherFor {
             int[] prices = new int[5];
 
             Scanner scanner = new Scanner(System.in);
-
-            for (int first = 0; first < prices.length; first++) {
+             for (int first = 0; first < prices.length; first++) {
                 System.out.print((first + 1) + " 번째 가격 : ");
                 int price = scanner.nextInt();
 
