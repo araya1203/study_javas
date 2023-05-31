@@ -3,6 +3,9 @@ public class GitConflicts {
         int first = 0;
         first = first + 1;
 
-    
+        int second = first + 1;
+
+        System.out.println(second);
+    }
 }
-}
+

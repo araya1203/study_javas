@@ -1,4 +1,4 @@
-public class WhileWithScanners {
+public class Template {
     public static void main(String[] args) {
          // try catch문 사용
         try {
