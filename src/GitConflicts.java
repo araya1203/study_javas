@@ -5,4 +5,8 @@ public class GitConflicts {
 
     
 }
-}
+        int second = 1;
+        int first = 0;
+       second = first + 1;
+    }
+
