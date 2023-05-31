@@ -1,6 +1,7 @@
 public class MethodsSwitchs {
 
-    public String today(int day){
+    public String today(int day){ 
+        // int day 매개변수 (parameter)
         String str = "";
         try {
             switch (day) {
@@ -33,7 +34,7 @@ public class MethodsSwitchs {
            
            MethodsSwitchs methodsSwitchs = new MethodsSwitchs();
            String returnResult= methodsSwitchs.today(day);
-            System.out.println(returnResult);
+           System.out.println(returnResult);
             
             
         } catch (Exception e) {
