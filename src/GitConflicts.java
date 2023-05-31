@@ -1,2 +1,7 @@
-git add src/GitConflicts.java
-git commit -m "Resolved merge conflict in GitConflicts.java"
+public class GitConflicts {
+    public static void main(String[] args) {
+        int second = 1;
+        int first = 0;
+       second = first + 1;
+    }
+}
