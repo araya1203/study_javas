@@ -92,6 +92,11 @@ HashMap<String, HashMap<String, Object>> healthData = new HashMap<>();
             if (personData.containsKey("유지 방안")) {
                 System.out.println("유지 방안: " + personData.get("유지 방안"));
             }
+
+
+             for(HashMap<String, Object> personData = healthData.get(name)) { 
+                System.out.println(car.get( "CarCompany") + car.get( "CarName") + car.get( "Year"));
+            }
         }    
             System.out.println();
         } catch (Exception e) {
