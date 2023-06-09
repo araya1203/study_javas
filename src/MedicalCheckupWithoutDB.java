@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 public class MedicalCheckupWithoutDB {
     public static void main(String[] args) {
-
+ try {
 
 HashMap<String, HashMap<String, Object>> healthData = new HashMap<>();
 
@@ -92,7 +92,13 @@ HashMap<String, HashMap<String, Object>> healthData = new HashMap<>();
             if (personData.containsKey("유지 방안")) {
                 System.out.println("유지 방안: " + personData.get("유지 방안"));
             }
+        }    
             System.out.println();
+        } catch (Exception e) {
+            // TODO: handle exception
         }
-    }
+    
+    } 
 }
+
+
