@@ -77,33 +77,22 @@ HashMap<String, HashMap<String, Object>> healthData = new HashMap<>();
         person5.put("재검진 항목", person5Recheck);
         healthData.put("최민호", person5);
 
-        // 결과 출력
-        for (String name : healthData.keySet()) {
+   
+      
+  // 결과 출력
+            String name = "홍길동";
             HashMap<String, Object> personData = healthData.get(name);
-            System.out.println("이름: " + name);
-            System.out.println("성별: " + personData.get("성별"));
-            System.out.println("나이: " + personData.get("나이"));
-            System.out.println("키 (cm): " + personData.get("키 (cm)"));
-            System.out.println("체중 (kg): " + personData.get("체중 (kg)"));
-            System.out.println("혈압 (mmHg): " + personData.get("혈압 (mmHg)"));
-            System.out.println("혈당 (mg/dL): " + personData.get("혈당 (mg/dL)"));
-            System.out.println("검진 결과: " + personData.get("검진 결과"));
-            System.out.println("재검진 항목: " + personData.get("재검진 항목"));
-            if (personData.containsKey("유지 방안")) {
-                System.out.println("유지 방안: " + personData.get("유지 방안"));
+            if (personData != null) {
+                System.out.println("개인별 정보:");
+                for (String key : personData.keySet()) {
+                    System.out.println(key + ": " + personData.get(key));
+                }
+            } else {
+                System.out.println("해당 이름의 개인 정보를 찾을 수 없습니다.");
             }
-
-
-             for(HashMap<String, Object> personData = healthData.get(name)) { 
-                System.out.println(car.get( "CarCompany") + car.get( "CarName") + car.get( "Year"));
-            }
-        }    
-            System.out.println();
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }
-    
-    } 
+    }
 }
-
 
