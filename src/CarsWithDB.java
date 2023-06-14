@@ -5,6 +5,8 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import commons.Commons;
+
 public class CarsWithDB {
     public static void main(String[] args) {
         try {
@@ -28,7 +30,7 @@ public class CarsWithDB {
                 System.out.print("선택입력 : ");
                 workKey = scanner.nextLine();
                 if (workKey.equals("O")) {
-                    // 차 이름 명단
+                    //- 차 이름 명단
                     System.out.println("- 차 이름 명단");
                     query = "SELECT T_FAC.COMPANY, T_CAR_INFOR.CAR_NAME\n" + //
                             "\t, T_CAR_INFOR.CAR_INFOR_ID\n" + //
@@ -46,8 +48,8 @@ public class CarsWithDB {
                         System.out.print(number + ". " +
                             resultSet.getString("COMPANY") + " - " +
                             resultSet.getString("CAR_NAME") + ": ");
-                          String carInforId =   resultSet.getString("CAR_INFOR_ID");
-                          carNumberMap.put(String.valueOf(number),carInforId);
+                        String carInforId = resultSet.getString("CAR_INFOR_ID");
+                        carNumberMap.put(String.valueOf(number), carInforId);
                         query2 = "SELECT T_OPT_INFO.OPTION_NAME\n" + //
                                 "FROM option_infors AS T_OPT_INFO\n" + //
                                 "\tinner join `options` AS T_OPTS\n" + //
@@ -60,13 +62,41 @@ public class CarsWithDB {
                         number = number + 1;
                         System.out.println();
                     }
-
-                    // 차량 번호 입력 :
-                    System.out.print("- 차 이름 명단 : ");
+                    // - 차명 번호 입력 :
+                    System.out.print("- 차 이름 명단 : ") ;
                     String CarNumber = scanner.nextLine();
-                    System.out.println("차명 PK : " + carNumberMap.get(CarNumber));
+                    // System.out.println("차명 PK : " + carNumberMap.get(CarNumber));
+                    System.out.println("- 선택 가능 옵션들");
+                    query = "SELECT OPTION_INFOR_ID, OPTION_NAME\n" + //
+                            "FROM option_infors";
+                    resultSet = statement.executeQuery(query);
+                    number = 1;
+                    HashMap<String, String> carOptionInfor = new HashMap<>();
+                    while(resultSet.next()){
+                        System.out.print(number +"."+ resultSet.getString("OPTION_NAME")+", ");
+                        carOptionInfor.put(String.valueOf(number), resultSet.getString("OPTION_INFOR_ID"));
+                        number = number + 1;
+                    }
+                    System.out.println();
+                    System.out.print("- 추가 옵션 선택 : ");
+                    String optionNumber = scanner.nextLine();
+                    System.out.println(carNumberMap.get(CarNumber) +", "+carOptionInfor.get(optionNumber));
+                    String carPk = carNumberMap.get(CarNumber);
+                    String optionPk = carOptionInfor.get(optionNumber);
+                    // delete 옵션
+                    query = "DELETE FROM `OPTIONS`\n" + //
+                            "WHERE CAR_INFOR_ID = '"+carPk+"' AND OPTION_INFOR_ID ='"+optionPk+"'";
+                    int count = statement.executeUpdate(query);
+                    // insert 옵션
+                    Commons commons = new Commons();
+                    String optionId = commons.generateUUID();
+                    query = "INSERT INTO `OPTIONS`\n" + //
+                            "(OPTION_ID, CAR_INFOR_ID, OPTION_INFOR_ID)\n" + //
+                            "value\n" + //
+                            "('"+optionId+"', '"+carPk+"', '"+optionPk+"')";
+                    count = statement.executeUpdate(query);
 
-
+                    System.out.println();
 
                 } else if (workKey.equals("S")) {
                     System.out.println("- 통계 시작 -");

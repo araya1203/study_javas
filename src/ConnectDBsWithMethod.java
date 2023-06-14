@@ -7,7 +7,7 @@ method는 넣는값과 나오는 값이 정해져 있다. 갯수만 다를 뿐�
 
 import java.sql.*;
 
-import Cars.AnyStatements;
+import cars.AnyStatements;
 
 public class ConnectDBsWithMethod {
     public static void main(String[] args) {
