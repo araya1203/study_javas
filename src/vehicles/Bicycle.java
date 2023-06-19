@@ -7,6 +7,8 @@ public class Bicycle {
        String color ;
        HashMap<String,Object> spec;
        public Bicycle(){
+          System.out.println("");
+
        }
        public Bicycle(int price, String color){
         this.price = price;
